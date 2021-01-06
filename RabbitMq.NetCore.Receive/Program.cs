@@ -10,6 +10,19 @@ namespace RabbitMq.NetCore.Receive
         static void Main(string[] args)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
+            //var factory = new ConnectionFactory()
+            //{
+            //    HostName = "something.mq.ap-south-1.amazonaws.com",
+            //    UserName = "sanketh",
+            //    Password = "",
+            //    Port = 5671,
+            //    RequestedHeartbeat = TimeSpan.FromSeconds(60),
+            //    Ssl =
+            //        {
+            //            ServerName = "something.mq.ap-south-1.amazonaws.com",
+            //            Enabled = true
+            //        }
+            //};
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
 
